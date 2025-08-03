@@ -14,13 +14,183 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_posts: {
+        Row: {
+          author_id: string
+          content: string
+          created_at: string | null
+          excerpt: string | null
+          id: string
+          image_url: string | null
+          status: string | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          author_id: string
+          content: string
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string
+          image_url?: string | null
+          status?: string | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          author_id?: string
+          content?: string
+          created_at?: string | null
+          excerpt?: string | null
+          id?: string
+          image_url?: string | null
+          status?: string | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          email: string | null
+          id: string
+          role: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          email?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      spell_requests: {
+        Row: {
+          admin_notes: string | null
+          client_email: string
+          client_name: string
+          created_at: string | null
+          details: string
+          id: string
+          spell_type: string
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          admin_notes?: string | null
+          client_email: string
+          client_name: string
+          created_at?: string | null
+          details: string
+          id?: string
+          spell_type: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          admin_notes?: string | null
+          client_email?: string
+          client_name?: string
+          created_at?: string | null
+          details?: string
+          id?: string
+          spell_type?: string
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      spell_services: {
+        Row: {
+          category: string | null
+          created_at: string | null
+          description: string
+          duration: string | null
+          id: string
+          image_url: string | null
+          price: number | null
+          status: string | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string | null
+          description: string
+          duration?: string | null
+          id?: string
+          image_url?: string | null
+          price?: number | null
+          status?: string | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string | null
+          description?: string
+          duration?: string | null
+          id?: string
+          image_url?: string | null
+          price?: number | null
+          status?: string | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          client_name: string
+          content: string
+          created_at: string | null
+          id: string
+          rating: number | null
+          status: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          client_name: string
+          content: string
+          created_at?: string | null
+          id?: string
+          rating?: number | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          client_name?: string
+          content?: string
+          created_at?: string | null
+          id?: string
+          rating?: number | null
+          status?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

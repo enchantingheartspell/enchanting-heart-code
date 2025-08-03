@@ -164,7 +164,7 @@ const Services = () => {
                     <p className="text-sm text-muted-foreground">{service.suitable}</p>
                   </div>
                   
-                  <Button variant="mystical" className="w-full" asChild>
+                  <Button variant="elegant" className="w-full" asChild>
                     <Link to="/booking">
                       <Heart className="mr-2 h-4 w-4" />
                       Book This Service
@@ -270,7 +270,7 @@ const Services = () => {
             and take the first step towards manifesting your heart's desires.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="mystical" size="xl" asChild>
+            <Button variant="elegant" size="xl" asChild>
               <Link to="/booking">
                 <Heart className="mr-2 h-5 w-5" />
                 Book Your Spell Now

@@ -160,7 +160,7 @@ const Home = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="golden" size="lg" asChild>
+            <Button variant="luxe" size="lg" asChild>
               <Link to="/services">View All Services</Link>
             </Button>
           </div>
@@ -222,7 +222,7 @@ const Home = () => {
             will help determine the perfect spell for your unique situation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="mystical" size="xl" asChild>
+            <Button variant="elegant" size="xl" asChild>
               <Link to="/booking">
                 <Heart className="mr-2 h-5 w-5" />
                 Book Your Spell Now

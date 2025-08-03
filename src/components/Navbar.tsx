@@ -48,7 +48,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="mystical" size="sm" asChild>
+            <Button variant="elegant" size="sm" asChild>
               <Link to="/booking">Book Your Spell</Link>
             </Button>
           </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="pt-2">
-              <Button variant="mystical" className="w-full" asChild>
+              <Button variant="elegant" className="w-full" asChild>
                 <Link to="/booking" onClick={() => setIsOpen(false)}>
                   Book Your Spell
                 </Link>

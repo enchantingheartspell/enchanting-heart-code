@@ -234,7 +234,7 @@ const Booking = () => {
                       </div>
                     </div>
 
-                    <Button type="submit" variant="mystical" size="lg" className="w-full">
+                    <Button type="submit" variant="elegant" size="lg" className="w-full">
                       <Heart className="mr-2 h-5 w-5" />
                       Submit Booking Request
                     </Button>

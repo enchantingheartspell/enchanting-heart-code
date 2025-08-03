@@ -234,7 +234,7 @@ const Testimonials = () => {
               Join thousands of satisfied clients who have transformed their love lives through our ethical spiritual services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="mystical" size="lg" asChild>
+              <Button variant="elegant" size="lg" asChild>
                 <Link to="/booking">
                   <Heart className="mr-2 h-5 w-5" />
                   Book Your Spell Now

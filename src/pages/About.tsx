@@ -91,7 +91,7 @@ const About = () => {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <Button variant="mystical" asChild>
+                <Button variant="elegant" asChild>
                   <Link to="/booking">Book Consultation</Link>
                 </Button>
                 <Button variant="outline" asChild>
@@ -231,7 +231,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <Button variant="mystical" size="xl" asChild>
+          <Button variant="elegant" size="xl" asChild>
             <Link to="/booking">
               <Heart className="mr-2 h-5 w-5" />
               Start Your Love Journey

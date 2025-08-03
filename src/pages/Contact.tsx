@@ -92,7 +92,7 @@ const Contact = () => {
                   <p className="text-muted-foreground">Personalized spell recommendation</p>
                   <p className="text-sm text-muted-foreground">Complete the booking form to get started</p>
                 </div>
-                <Button variant="golden" className="w-full">
+                <Button variant="luxe" className="w-full">
                   <Heart className="mr-2 h-4 w-4" />
                   Book Now
                 </Button>
@@ -256,11 +256,11 @@ const Contact = () => {
             Don't wait another day to find the love and happiness you deserve. Contact us now for your free consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="mystical" size="xl">
+            <Button variant="elegant" size="xl">
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp Now
             </Button>
-            <Button variant="golden" size="xl">
+            <Button variant="luxe" size="xl">
               <Heart className="mr-2 h-5 w-5" />
               Book Consultation
             </Button>

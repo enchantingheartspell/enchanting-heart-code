@@ -52,7 +52,7 @@ const NotFound = () => {
                 <p className="text-muted-foreground mb-4">
                   Go back to our homepage and discover our spiritual services
                 </p>
-                <Button variant="mystical" className="w-full" asChild>
+                <Button variant="elegant" className="w-full" asChild>
                   <Link to="/">
                     <Home className="mr-2 h-4 w-4" />
                     Take Me Home
@@ -72,7 +72,7 @@ const NotFound = () => {
                 <p className="text-muted-foreground mb-4">
                   Start your love journey with a personalized consultation
                 </p>
-                <Button variant="golden" className="w-full" asChild>
+                <Button variant="luxe" className="w-full" asChild>
                   <Link to="/booking">
                     <Heart className="mr-2 h-4 w-4" />
                     Book Now

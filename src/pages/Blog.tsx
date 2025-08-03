@@ -103,7 +103,7 @@ const Blog = () => {
             {categories.map((category, index) => (
               <Button
                 key={index}
-                variant={index === 0 ? "mystical" : "outline"}
+                variant={index === 0 ? "elegant" : "outline"}
                 size="sm"
                 className="rounded-full"
               >
@@ -261,7 +261,7 @@ const Blog = () => {
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-3 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary"
                 />
-                <Button variant="mystical">
+                <Button variant="elegant">
                   Subscribe
                 </Button>
               </div>
@@ -285,7 +285,7 @@ const Blog = () => {
             Book your free consultation to get guidance tailored to your unique situation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="mystical" size="xl" asChild>
+            <Button variant="elegant" size="xl" asChild>
               <Link to="/booking">
                 <Heart className="mr-2 h-5 w-5" />
                 Book Free Consultation

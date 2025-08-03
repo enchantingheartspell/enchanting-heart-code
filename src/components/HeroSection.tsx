@@ -5,68 +5,73 @@ import { Star, Heart, Shield, Users } from "lucide-react";
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Mystical background with candles and cosmic elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/90 via-purple-800/80 to-black/95">
-        {/* Cosmic background pattern */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-200 rounded-full animate-pulse" />
-          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-40 left-1/4 w-1.5 h-1.5 bg-yellow-100 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-purple-200 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
-          <div className="absolute bottom-20 left-20 w-2 h-2 bg-pink-200 rounded-full animate-pulse" style={{ animationDelay: '4s' }} />
-          <div className="absolute top-60 right-10 w-1 h-1 bg-blue-200 rounded-full animate-pulse" style={{ animationDelay: '5s' }} />
+      {/* Elegant sophisticated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background">
+        {/* Elegant floating elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-20 left-20 w-3 h-3 bg-secondary rounded-full animate-sparkle" />
+          <div className="absolute top-32 right-32 w-2 h-2 bg-primary rounded-full animate-sparkle" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-60 left-1/3 w-4 h-4 bg-accent rounded-full animate-sparkle" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-40 right-1/4 w-2 h-2 bg-secondary rounded-full animate-sparkle" style={{ animationDelay: '3s' }} />
+          <div className="absolute bottom-60 left-1/2 w-3 h-3 bg-primary rounded-full animate-sparkle" style={{ animationDelay: '4s' }} />
+          <div className="absolute top-1/2 right-20 w-2 h-2 bg-accent rounded-full animate-sparkle" style={{ animationDelay: '5s' }} />
         </div>
         
-        {/* Floating mystical orbs */}
-        <div className="absolute top-1/4 left-16 w-24 h-24 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-xl animate-float" />
-        <div className="absolute top-1/3 right-24 w-32 h-32 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-r from-blue-400/25 to-purple-400/25 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }} />
+        {/* Sophisticated orbs */}
+        <div className="absolute top-1/4 left-16 w-32 h-32 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-2xl animate-luxe-float" />
+        <div className="absolute top-1/3 right-24 w-40 h-40 bg-gradient-to-r from-secondary/15 to-primary/15 rounded-full blur-3xl animate-luxe-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-28 h-28 bg-gradient-to-r from-accent/25 to-secondary/25 rounded-full blur-2xl animate-luxe-float" style={{ animationDelay: '4s' }} />
         
-        {/* Candle glow effects */}
-        <div className="absolute bottom-32 left-20 w-16 h-24 bg-gradient-to-t from-orange-500/40 via-yellow-400/30 to-transparent rounded-full blur-sm animate-pulse" />
-        <div className="absolute bottom-28 right-32 w-12 h-20 bg-gradient-to-t from-orange-500/35 via-yellow-400/25 to-transparent rounded-full blur-sm animate-pulse" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-36 left-1/2 w-14 h-22 bg-gradient-to-t from-orange-500/30 via-yellow-400/20 to-transparent rounded-full blur-sm animate-pulse" style={{ animationDelay: '3s' }} />
+        {/* Elegant light rays */}
+        <div className="absolute top-0 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
+        <div className="absolute top-0 right-1/3 w-px h-40 bg-gradient-to-b from-transparent via-secondary/40 to-transparent" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-0 left-1/2 w-px h-36 bg-gradient-to-t from-transparent via-accent/35 to-transparent" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Hero Content */}
         <div className="space-y-8">
           {/* Main headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight">
-            <span className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              Restore Your Love
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight tracking-wide">
+            <span className="block bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent mb-2">
+              Enchanting Heart
             </span>
             <span className="block bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent">
-              Today 🌹
+              Spells ✨
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Welcome to <span className="text-primary font-semibold">Enchanting Heart Spells</span> — a sanctuary where love, energy, and intention align. 
-            I'm a licensed spiritual consultant with over <span className="text-accent font-semibold">12 years of experience</span> helping 
-            souls reunite with their true partners through ancient, ethical, and natural spell casting.
-          </p>
+          <div className="space-y-4">
+            <p className="text-2xl md:text-3xl font-garamond italic text-foreground/90 max-w-3xl mx-auto">
+              "Where Love, Energy & Divine Intention Align"
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-inter">
+              Welcome to a sanctuary of authentic love restoration. I'm a licensed spiritual consultant with over 
+              <span className="text-primary font-semibold"> 12 years of experience</span> helping souls reunite through 
+              <span className="text-accent font-semibold"> ancient, ethical spell casting</span>.
+            </p>
+          </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 py-8">
-            <div className="flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-lg px-4 py-2">
-              <Users className="h-5 w-5 text-primary" />
-              <span className="text-lg font-semibold">1200+ Happy Clients</span>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10 py-12">
+            <div className="flex items-center space-x-3 bg-card/70 backdrop-blur-md rounded-xl px-6 py-4 border border-primary/20">
+              <Users className="h-6 w-6 text-primary" />
+              <span className="text-lg font-garamond font-medium">1200+ Reunited Hearts</span>
             </div>
-            <div className="flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-lg px-4 py-2">
-              <Star className="h-5 w-5 text-secondary" />
-              <span className="text-lg font-semibold">20+ Countries Served</span>
+            <div className="flex items-center space-x-3 bg-card/70 backdrop-blur-md rounded-xl px-6 py-4 border border-secondary/20">
+              <Star className="h-6 w-6 text-secondary" />
+              <span className="text-lg font-garamond font-medium">20+ Countries Served</span>
             </div>
-            <div className="flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-lg px-4 py-2">
-              <Shield className="h-5 w-5 text-accent" />
-              <span className="text-lg font-semibold">24/7 Support</span>
+            <div className="flex items-center space-x-3 bg-card/70 backdrop-blur-md rounded-xl px-6 py-4 border border-accent/20">
+              <Shield className="h-6 w-6 text-accent" />
+              <span className="text-lg font-garamond font-medium">24/7 Spiritual Support</span>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="mystical" size="xl" asChild>
+            <Button variant="elegant" size="xl" asChild>
               <Link to="/booking" className="group">
                 <Heart className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                 Book Your Spell Now

@@ -252,7 +252,7 @@ const Refund = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="mystical" size="lg">
+                <Button variant="elegant" size="lg">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   WhatsApp Support
                 </Button>

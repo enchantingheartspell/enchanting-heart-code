@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				'display': ['Playfair Display', 'serif'],
 				'inter': ['Inter', 'sans-serif'],
+				'garamond': ['Cormorant Garamond', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

@@ -1,0 +1,339 @@
+import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
+import { Heart, Clock, Shield, CheckCircle, Star, MessageCircle } from "lucide-react";
+
+const Booking = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    fullName: "",
+    whatsapp: "",
+    email: "",
+    spellType: "",
+    targetName: "",
+    situation: "",
+    acceptTerms: false
+  });
+
+  const spellTypes = [
+    "Reunite Lovers Spell",
+    "Attract New Love Spell", 
+    "Strengthen Relationship Spell",
+    "Stop Break-Up / Divorce Spell",
+    "Custom Spell Work"
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.acceptTerms) {
+      toast({
+        title: "Terms Required",
+        description: "Please accept the terms and conditions to continue.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Simulate form submission
+    toast({
+      title: "Booking Received! ✨",
+      description: "You'll be contacted within 12 hours via WhatsApp for your consultation.",
+      duration: 5000
+    });
+
+    // Reset form
+    setFormData({
+      fullName: "",
+      whatsapp: "",
+      email: "",
+      spellType: "",
+      targetName: "",
+      situation: "",
+      acceptTerms: false
+    });
+  };
+
+  const handleInputChange = (field: string, value: string | boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  return (
+    <div className="min-h-screen pt-20">
+      {/* Header Section */}
+      <section className="py-20 bg-gradient-to-b from-background to-card/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+              Book Your <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Spell Consultation</span>
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+              Take the first step towards transforming your love life. Fill out the form below for a personalized consultation.
+            </p>
+            
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <div className="flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-lg px-4 py-2">
+                <Shield className="h-4 w-4 text-green-400" />
+                <span>100% Confidential</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-lg px-4 py-2">
+                <Clock className="h-4 w-4 text-primary" />
+                <span>Response within 12 hours</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-lg px-4 py-2">
+                <Star className="h-4 w-4 text-secondary" />
+                <span>Licensed Spiritual Consultant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Booking Form */}
+            <div className="lg:col-span-2">
+              <Card className="bg-gradient-to-br from-card to-card/80 border-border/50 shadow-xl">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-display flex items-center">
+                    <Heart className="mr-3 h-6 w-6 text-primary" />
+                    Spell Consultation Form
+                  </CardTitle>
+                  <CardDescription>
+                    Please provide detailed information about your situation for the most effective spell casting.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Personal Information */}
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold border-b border-border/50 pb-2">Personal Information</h3>
+                      
+                      <div>
+                        <Label htmlFor="fullName">Full Name *</Label>
+                        <Input
+                          id="fullName"
+                          value={formData.fullName}
+                          onChange={(e) => handleInputChange("fullName", e.target.value)}
+                          placeholder="Enter your full name"
+                          required
+                          className="mt-1"
+                        />
+                      </div>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="whatsapp">WhatsApp Number *</Label>
+                          <Input
+                            id="whatsapp"
+                            value={formData.whatsapp}
+                            onChange={(e) => handleInputChange("whatsapp", e.target.value)}
+                            placeholder="+1234567890"
+                            required
+                            className="mt-1"
+                          />
+                        </div>
+                        
+                        <div>
+                          <Label htmlFor="email">Email Address *</Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={(e) => handleInputChange("email", e.target.value)}
+                            placeholder="your@email.com"
+                            required
+                            className="mt-1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Spell Information */}
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold border-b border-border/50 pb-2">Spell Requirements</h3>
+                      
+                      <div>
+                        <Label htmlFor="spellType">Type of Spell *</Label>
+                        <Select value={formData.spellType} onValueChange={(value) => handleInputChange("spellType", value)}>
+                          <SelectTrigger className="mt-1">
+                            <SelectValue placeholder="Choose the spell that matches your situation" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {spellTypes.map((spell) => (
+                              <SelectItem key={spell} value={spell}>
+                                {spell}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="targetName">Target Person's First Name</Label>
+                        <Input
+                          id="targetName"
+                          value={formData.targetName}
+                          onChange={(e) => handleInputChange("targetName", e.target.value)}
+                          placeholder="First name of the person (if applicable)"
+                          className="mt-1"
+                        />
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Leave blank for "Attract New Love" spells
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="situation">Describe Your Situation *</Label>
+                        <Textarea
+                          id="situation"
+                          value={formData.situation}
+                          onChange={(e) => handleInputChange("situation", e.target.value)}
+                          placeholder="Please provide detailed information about your love situation, relationship history, and what you hope to achieve..."
+                          rows={6}
+                          required
+                          className="mt-1"
+                        />
+                        <p className="text-xs text-muted-foreground mt-1">
+                          The more details you provide, the more personalized and effective your spell will be.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Terms and Conditions */}
+                    <div className="space-y-4">
+                      <div className="flex items-start space-x-3 p-4 bg-muted/30 rounded-lg">
+                        <Checkbox
+                          id="terms"
+                          checked={formData.acceptTerms}
+                          onCheckedChange={(checked) => handleInputChange("acceptTerms", checked as boolean)}
+                        />
+                        <div className="text-sm leading-relaxed">
+                          <Label htmlFor="terms" className="cursor-pointer">
+                            I accept the Terms & Conditions and understand that:
+                          </Label>
+                          <ul className="mt-2 space-y-1 text-muted-foreground">
+                            <li>• All spell work is performed with ethical, positive intentions only</li>
+                            <li>• Results typically manifest within 3-7 days of completion</li>
+                            <li>• My personal information will remain 100% confidential</li>
+                            <li>• I will receive 24/7 WhatsApp support throughout the process</li>
+                            <li>• Due to the spiritual nature of this work, results cannot be guaranteed</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Button type="submit" variant="mystical" size="lg" className="w-full">
+                      <Heart className="mr-2 h-5 w-5" />
+                      Submit Booking Request
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Sidebar Information */}
+            <div className="space-y-6">
+              {/* What Happens Next */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center">
+                    <CheckCircle className="mr-2 h-5 w-5 text-green-400" />
+                    What Happens Next?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                    <div>
+                      <p className="font-medium">Immediate Confirmation</p>
+                      <p className="text-sm text-muted-foreground">You'll see a success message confirming your booking.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                    <div>
+                      <p className="font-medium">Personal Contact</p>
+                      <p className="text-sm text-muted-foreground">Lady Amina will contact you within 12 hours via WhatsApp.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                    <div>
+                      <p className="font-medium">Consultation & Planning</p>
+                      <p className="text-sm text-muted-foreground">Detailed discussion about your situation and spell selection.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                    <div>
+                      <p className="font-medium">Spell Performance</p>
+                      <p className="text-sm text-muted-foreground">Custom ritual performed with your intention and energy.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Contact Card */}
+              <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-border/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center">
+                    <MessageCircle className="mr-2 h-5 w-5 text-green-500" />
+                    Need Help?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Have questions about which spell is right for you? Contact us directly for a free consultation.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <p><strong>WhatsApp:</strong> Available 24/7</p>
+                    <p><strong>Email:</strong> hello@enchantingheartspells.com</p>
+                    <p><strong>Response Time:</strong> Within 12 hours</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Trust Badges */}
+              <Card className="bg-card/50 backdrop-blur-sm border-border/50">
+                <CardContent className="pt-6">
+                  <div className="text-center space-y-4">
+                    <div className="flex justify-center space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 fill-secondary text-secondary" />
+                      ))}
+                    </div>
+                    <p className="text-sm"><strong>4.9/5</strong> from 1200+ clients</p>
+                    <div className="space-y-2 text-xs text-muted-foreground">
+                      <div className="flex items-center justify-center space-x-2">
+                        <Shield className="h-4 w-4 text-green-400" />
+                        <span>SSL Secured & DMCA Protected</span>
+                      </div>
+                      <div className="flex items-center justify-center space-x-2">
+                        <CheckCircle className="h-4 w-4 text-blue-400" />
+                        <span>Licensed Spiritual Consultant</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Booking;

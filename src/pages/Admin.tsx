@@ -84,12 +84,12 @@ export default function Admin() {
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
 
-  // Redirect if not admin
+  // Redirect if not admin (but don't redirect away from admin if user is admin)
   useEffect(() => {
-    if (user && !isAdmin) {
+    if (user && !loading && !isAdmin) {
       window.location.href = '/';
     }
-  }, [user, isAdmin]);
+  }, [user, isAdmin, loading]);
 
   // Load data
   useEffect(() => {

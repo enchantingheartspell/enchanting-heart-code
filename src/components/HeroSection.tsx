@@ -5,12 +5,27 @@ import { Star, Heart, Shield, Users } from "lucide-react";
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-40 right-20 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
-        <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-primary/15 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }} />
+      {/* Mystical background with candles and cosmic elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/90 via-purple-800/80 to-black/95">
+        {/* Cosmic background pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-10 w-2 h-2 bg-yellow-200 rounded-full animate-pulse" />
+          <div className="absolute top-20 right-20 w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-40 left-1/4 w-1.5 h-1.5 bg-yellow-100 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-purple-200 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
+          <div className="absolute bottom-20 left-20 w-2 h-2 bg-pink-200 rounded-full animate-pulse" style={{ animationDelay: '4s' }} />
+          <div className="absolute top-60 right-10 w-1 h-1 bg-blue-200 rounded-full animate-pulse" style={{ animationDelay: '5s' }} />
+        </div>
+        
+        {/* Floating mystical orbs */}
+        <div className="absolute top-1/4 left-16 w-24 h-24 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-xl animate-float" />
+        <div className="absolute top-1/3 right-24 w-32 h-32 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-r from-blue-400/25 to-purple-400/25 rounded-full blur-xl animate-float" style={{ animationDelay: '4s' }} />
+        
+        {/* Candle glow effects */}
+        <div className="absolute bottom-32 left-20 w-16 h-24 bg-gradient-to-t from-orange-500/40 via-yellow-400/30 to-transparent rounded-full blur-sm animate-pulse" />
+        <div className="absolute bottom-28 right-32 w-12 h-20 bg-gradient-to-t from-orange-500/35 via-yellow-400/25 to-transparent rounded-full blur-sm animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-36 left-1/2 w-14 h-22 bg-gradient-to-t from-orange-500/30 via-yellow-400/20 to-transparent rounded-full blur-sm animate-pulse" style={{ animationDelay: '3s' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

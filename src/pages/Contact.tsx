@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, Clock, Globe, Heart, Star, Shield } from "lucide-react";
 
 const Contact = () => {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "2348139375655";
+    const message = "Hello! I'm interested in your love spell services. Can you help me?";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
@@ -38,7 +45,10 @@ const Contact = () => {
                   <p className="text-muted-foreground">Instant response during business hours</p>
                   <p className="text-sm text-muted-foreground">Click the button below to start chatting</p>
                 </div>
-                <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                <Button 
+                  onClick={handleWhatsAppClick}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white"
+                >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Chat on WhatsApp
                 </Button>
@@ -256,7 +266,11 @@ const Contact = () => {
             Don't wait another day to find the love and happiness you deserve. Contact us now for your free consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="elegant" size="xl">
+            <Button 
+              onClick={handleWhatsAppClick}
+              variant="elegant" 
+              size="xl"
+            >
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp Now
             </Button>

@@ -70,7 +70,24 @@ const Booking = () => {
     setIsSubmitting(true);
 
     try {
-      // First save to database
+      console.log('Submitting booking with data:', formData);
+      
+      // Send directly to Telegram via edge function
+      const { data, error } = await supabase.functions.invoke('send-telegram-booking', {
+        body: {
+          ...formData,
+          location: userLocation
+        }
+      });
+
+      console.log('Telegram response:', { data, error });
+
+      if (error) {
+        console.error('Telegram error:', error);
+        throw new Error('Failed to send to Telegram: ' + error.message);
+      }
+
+      // Save to database after successful Telegram send
       const { error: dbError } = await supabase
         .from('spell_requests')
         .insert({
@@ -83,20 +100,7 @@ const Booking = () => {
 
       if (dbError) {
         console.error('Database error:', dbError);
-        throw new Error('Failed to save booking');
-      }
-
-      // Then send to Telegram
-      const { error: telegramError } = await supabase.functions.invoke('send-telegram-booking', {
-        body: {
-          ...formData,
-          location: userLocation
-        }
-      });
-
-      if (telegramError) {
-        console.error('Telegram error:', telegramError);
-        // Don't fail the entire process if Telegram fails
+        // Don't fail if database save fails, Telegram is primary
       }
 
       toast({
@@ -116,7 +120,7 @@ const Booking = () => {
         acceptTerms: false
       });
 
-    } catch (error) {
+    } catch (error: any) {
       console.error('Submission error:', error);
       toast({
         title: "Submission Error",
@@ -127,13 +131,13 @@ const Booking = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
+
 
   return (
     <div className="min-h-screen pt-20">

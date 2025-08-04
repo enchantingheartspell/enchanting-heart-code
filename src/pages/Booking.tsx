@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import { Heart, Clock, Shield, CheckCircle, Star, MessageCircle } from "lucide-react";
 
 const Booking = () => {
@@ -20,6 +21,31 @@ const Booking = () => {
     situation: "",
     acceptTerms: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [userLocation, setUserLocation] = useState<{
+    latitude: number;
+    longitude: number;
+    accuracy: number;
+  } | null>(null);
+
+  // Get user's location when component mounts
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            accuracy: position.coords.accuracy
+          });
+        },
+        (error) => {
+          console.log('Geolocation error:', error);
+          // Continue without location if user denies permission
+        }
+      );
+    }
+  }, []);
 
   const spellTypes = [
     "Reunite Lovers Spell",
@@ -29,7 +55,7 @@ const Booking = () => {
     "Custom Spell Work"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.acceptTerms) {
@@ -41,23 +67,65 @@ const Booking = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Booking Received! ✨",
-      description: "You'll be contacted within 12 hours via WhatsApp for your consultation.",
-      duration: 5000
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      whatsapp: "",
-      email: "",
-      spellType: "",
-      targetName: "",
-      situation: "",
-      acceptTerms: false
-    });
+    try {
+      // First save to database
+      const { error: dbError } = await supabase
+        .from('spell_requests')
+        .insert({
+          client_name: formData.fullName,
+          client_email: formData.email,
+          spell_type: formData.spellType,
+          details: `WhatsApp: ${formData.whatsapp}\nTarget: ${formData.targetName}\nSituation: ${formData.situation}`,
+          status: 'pending'
+        });
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        throw new Error('Failed to save booking');
+      }
+
+      // Then send to Telegram
+      const { error: telegramError } = await supabase.functions.invoke('send-telegram-booking', {
+        body: {
+          ...formData,
+          location: userLocation
+        }
+      });
+
+      if (telegramError) {
+        console.error('Telegram error:', telegramError);
+        // Don't fail the entire process if Telegram fails
+      }
+
+      toast({
+        title: "Booking Received! ✨",
+        description: "You'll be contacted within 12 hours via WhatsApp for your consultation.",
+        duration: 5000
+      });
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        whatsapp: "",
+        email: "",
+        spellType: "",
+        targetName: "",
+        situation: "",
+        acceptTerms: false
+      });
+
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was an issue submitting your booking. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -234,9 +302,15 @@ const Booking = () => {
                       </div>
                     </div>
 
-                    <Button type="submit" variant="elegant" size="lg" className="w-full">
+                    <Button 
+                      type="submit" 
+                      variant="elegant" 
+                      size="lg" 
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       <Heart className="mr-2 h-5 w-5" />
-                      Submit Booking Request
+                      {isSubmitting ? "Submitting..." : "Submit Booking Request"}
                     </Button>
                   </form>
                 </CardContent>

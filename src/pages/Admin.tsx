@@ -203,6 +203,12 @@ export default function Admin() {
         const { error } = await signIn(email, password);
         if (error) {
           setAuthError(error.message);
+        } else {
+          // Wait a moment for the auth state to update
+          setTimeout(() => {
+            // Force a page reload to ensure fresh auth state
+            window.location.reload();
+          }, 1000);
         }
       } catch (err) {
         setAuthError('An unexpected error occurred');

@@ -104,7 +104,7 @@ const Contact = () => {
                 </div>
                 <Button variant="luxe" className="w-full">
                   <Heart className="mr-2 h-4 w-4" />
-                  <link to="/Booking">Book Now</link>
+                  Book Now
                 </Button>
                 <div className="text-xs text-muted-foreground">
                   <p>💖 Personalized service</p>

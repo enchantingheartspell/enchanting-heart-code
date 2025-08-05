@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Heart, Clock, Shield, CheckCircle, Star, MessageCircle } from "lucide-react";
@@ -22,6 +23,7 @@ const Booking = () => {
     acceptTerms: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [userLocation, setUserLocation] = useState<{
     latitude: number;
     longitude: number;
@@ -103,11 +105,8 @@ const Booking = () => {
         // Don't fail if database save fails, Telegram is primary
       }
 
-      toast({
-        title: "Booking Received! ✨",
-        description: "You'll be contacted within 12 hours via WhatsApp for your consultation.",
-        duration: 5000
-      });
+      // Show success dialog instead of toast
+      setShowSuccessDialog(true);
 
       // Reset form
       setFormData({
@@ -306,7 +305,7 @@ const Booking = () => {
                       </div>
                     </div>
 
-                    <Button 
+                     <Button 
                       type="submit" 
                       variant="elegant" 
                       size="lg" 
@@ -314,7 +313,7 @@ const Booking = () => {
                       disabled={isSubmitting}
                     >
                       <Heart className="mr-2 h-5 w-5" />
-                      {isSubmitting ? "Submitting..." : "Submit Booking Request"}
+                      {isSubmitting ? "Submitting..." : "Book Now"}
                     </Button>
                   </form>
                 </CardContent>
@@ -410,6 +409,31 @@ const Booking = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center justify-center text-center space-x-2">
+              <CheckCircle className="h-8 w-8 text-green-500" />
+              <span>Success!</span>
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-center space-y-4 py-4">
+            <p className="text-lg font-medium">Booking Received!</p>
+            <p className="text-muted-foreground">
+              You'll be contacted within 12 hours via WhatsApp.
+            </p>
+            <Button 
+              onClick={() => setShowSuccessDialog(false)} 
+              variant="elegant" 
+              className="w-full"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

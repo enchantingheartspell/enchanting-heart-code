@@ -77,7 +77,7 @@ const Contact = () => {
                 </div>
                 <Button variant="outline" className="w-full">
                   <a href="mailto:enchantingheartspell@outlook.com" className="mr-2 h-4 w-4" />
-                  Send Email
+                  Send Email</a>
                 </Button>
                 <div className="text-xs text-muted-foreground">
                   <p>📧 Detailed responses</p>

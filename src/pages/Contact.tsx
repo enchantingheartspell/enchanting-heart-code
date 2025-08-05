@@ -71,13 +71,13 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <div className="space-y-2">
-                  <p className="text-lg font-semibold">Enchantingheartspell@outlook.com/p>
+                  <p className="text-lg font-semibold">hello@enchantingheartspells.com</p>
                   <p className="text-muted-foreground">Response within 12 hours</p>
                   <p className="text-sm text-muted-foreground">Perfect for detailed consultations</p>
                 </div>
-                <Button variant="outline" className="w-full">
-                  <a href="mailto:enchantingheartspell@outlook.com" className="mr-2 h-4 w-4" />
-                  Send Email</a>
+                 <Button variant="outline" className="w-full">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Send Email
                 </Button>
                 <div className="text-xs text-muted-foreground">
                   <p>📧 Detailed responses</p>

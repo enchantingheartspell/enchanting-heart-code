@@ -261,7 +261,6 @@ const Booking = () => {
                           className="mt-1"
                         />
                         <p className="text-xs text-muted-foreground mt-1">
-                          Leave blank for "Attract New Love" spells
                         </p>
                       </div>
                       
@@ -376,7 +375,7 @@ const Booking = () => {
                   </p>
                   <div className="space-y-2 text-sm">
                     <p><strong>WhatsApp:</strong> Available 24/7</p>
-                    <p><strong>Email:</strong> hello@enchantingheartspells.com</p>
+                    <p><strong>Email:</strong> Enchantingheartspell@outlook.com</p>
                     <p><strong>Response Time:</strong> Within 12 hours</p>
                   </div>
                 </CardContent>

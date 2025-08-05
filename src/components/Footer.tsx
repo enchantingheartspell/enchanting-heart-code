@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-sm text-muted-foreground">hello@enchantingheartspells.com</span>
+                <span className="text-sm text-muted-foreground">Enchantingheartspell@outlook.com</span>
               </div>
               <div className="text-sm text-muted-foreground">
                 <div>🌍 Serving 20+ Countries</div>
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="border-t border-border/50 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2024 EnchantingHeartSpells. All rights reserved.
+              © 2025 EnchantingHeartSpells. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">

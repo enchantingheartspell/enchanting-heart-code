@@ -204,11 +204,8 @@ export default function Admin() {
         if (error) {
           setAuthError(error.message);
         } else {
-          // Wait a moment for the auth state to update
-          setTimeout(() => {
-            // Force a page reload to ensure fresh auth state
-            window.location.reload();
-          }, 1000);
+          // Auth state change will handle the redirect automatically
+          // No need to manually redirect here
         }
       } catch (err) {
         setAuthError('An unexpected error occurred');

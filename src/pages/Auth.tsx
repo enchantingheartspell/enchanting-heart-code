@@ -14,14 +14,19 @@ export default function Auth() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signIn, signUp, user } = useAuth();
+  const { signIn, signUp, user, isAdmin } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
-      navigate('/');
+      // Redirect admin users to admin page, regular users to home
+      if (isAdmin) {
+        navigate('/admin');
+      } else {
+        navigate('/');
+      }
     }
-  }, [user, navigate]);
+  }, [user, isAdmin, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +41,8 @@ export default function Auth() {
       if (error) {
         setError(error.message);
       } else if (!isSignUp) {
-        navigate('/');
+        // Success login will be handled by useEffect above
+        // which will redirect based on admin status
       } else {
         setError('Please check your email to confirm your account.');
       }

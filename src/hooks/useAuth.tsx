@@ -34,7 +34,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             .select('role')
             .eq('user_id', session.user.id)
             .single();
-          setIsAdmin(profile?.role === 'admin');
+          
+          const isUserAdmin = profile?.role === 'admin';
+          setIsAdmin(isUserAdmin);
+          
+          // Redirect admin users to admin page after successful login
+          if (event === 'SIGNED_IN' && isUserAdmin && window.location.pathname !== '/admin') {
+            setTimeout(() => {
+              window.location.href = '/admin';
+            }, 100);
+          }
         } else {
           setIsAdmin(false);
         }
@@ -53,8 +62,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           .eq('user_id', session.user.id)
           .single()
           .then(({ data: profile }) => {
-            setIsAdmin(profile?.role === 'admin');
+            const isUserAdmin = profile?.role === 'admin';
+            setIsAdmin(isUserAdmin);
             setLoading(false);
+            
+            // Check if admin is trying to access admin page on initial load
+            if (isUserAdmin && window.location.pathname === '/admin') {
+              // Stay on admin page
+            } else if (isUserAdmin && window.location.pathname === '/') {
+              // Redirect admin to admin page if they're on home page
+              window.location.href = '/admin';
+            }
           });
       } else {
         setLoading(false);

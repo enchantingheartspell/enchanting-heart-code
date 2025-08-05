@@ -71,7 +71,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="text-center space-y-4">
                 <div className="space-y-2">
-                  <p className="text-lg font-semibold">hello@enchantingheartspells.com</p>
+                  <p className="text-lg font-semibold">Enchantingheartspell@outlook.com</p>
                   <p className="text-muted-foreground">Response within 12 hours</p>
                   <p className="text-sm text-muted-foreground">Perfect for detailed consultations</p>
                 </div>

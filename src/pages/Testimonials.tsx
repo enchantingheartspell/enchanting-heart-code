@@ -11,7 +11,7 @@ const Testimonials = () => {
       rating: 5,
       service: "Reunite Lovers Spell",
       timeframe: "4 days",
-      text: "She helped me bring back my fiancé in just 4 days. I'm in tears of joy! Thank you, Lady Amina. After 3 months of no contact, he called me crying and apologizing. We're getting married next month!",
+      text: "He helped me bring back my fiancé in just 4 days. I'm in tears of joy! Thank you, Dr Diamenos. After 3 months of no contact, he called me crying and apologizing. We're getting married next month!",
       date: "2 days ago",
       verified: true
     },
@@ -31,7 +31,7 @@ const Testimonials = () => {
       rating: 5,
       service: "Custom Spell Work",
       timeframe: "5 days",
-      text: "I used to doubt spells, but her rituals are done with love and ethics. She is truly gifted. My wife and I are back together and our marriage has never been better.",
+      text: "I used to doubt spells, but his rituals are done with love and ethics. He is truly gifted. My wife and I are back together and our marriage has never been better.",
       date: "3 weeks ago",
       verified: true
     },
@@ -41,7 +41,7 @@ const Testimonials = () => {
       rating: 5,
       service: "Strengthen Relationship Spell",
       timeframe: "2 days",
-      text: "Amazing results! The third party situation was resolved and my husband came home. Lady Amina's guidance throughout the process was incredible. Highly recommended!",
+      text: "Amazing results! The third party situation was resolved and my husband came home. Dr Diamenos's guidance throughout the process was incredible. Highly recommended!",
       date: "1 month ago",
       verified: true
     },
@@ -51,7 +51,7 @@ const Testimonials = () => {
       rating: 5,
       service: "Stop Break-Up Spell",
       timeframe: "3 days",
-      text: "We were about to sign divorce papers when I found Lady Amina. Within 3 days, my wife changed her mind completely. We're in couples therapy now and rebuilding our love.",
+      text: "We were about to sign divorce papers when I found Dr Diamenos. Within 3 days, my wife changed her mind completely. We're in couples therapy now and rebuilding our love.",
       date: "6 weeks ago",
       verified: true
     },
@@ -81,7 +81,7 @@ const Testimonials = () => {
       rating: 5,
       service: "Custom Spell Work",
       timeframe: "4 days",
-      text: "Lady Amina understood my complex situation perfectly. Her custom spell work addressed all my concerns. My relationship is completely transformed - we're both happier now.",
+      text: "Dr Diamenos understood my complex situation perfectly. His custom spell work addressed all my concerns. My relationship is completely transformed - we're both happier now.",
       date: "4 months ago",
       verified: true
     },

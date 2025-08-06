@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Star, Heart, Shield, Users } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const HeroSection = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Elegant sophisticated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background">
+      {/* Mystical candle background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-card/60 to-background/80">
         {/* Elegant floating elements */}
         <div className="absolute inset-0 opacity-40">
           <div className="absolute top-20 left-20 w-3 h-3 bg-secondary rounded-full animate-sparkle" />

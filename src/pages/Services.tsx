@@ -2,6 +2,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Heart, Clock, Star, CheckCircle, Users, Shield, Sparkles, Crown } from "lucide-react";
+import reuniteLoversSpell from "@/assets/reunite-lovers-spell.jpg";
+import attractNewLoveSpell from "@/assets/attract-new-love-spell.jpg";
+import strengthenRelationshipSpell from "@/assets/strengthen-relationship-spell.jpg";
+import stopBreakupSpell from "@/assets/stop-breakup-spell.jpg";
+import customSpellWork from "@/assets/custom-spell-work.jpg";
+import candleBackground from "@/assets/candle-background.jpg";
 
 const Services = () => {
   const services = [
@@ -11,6 +17,7 @@ const Services = () => {
       delivery: "Within 3 days",
       price: "Most Popular",
       icon: <Heart className="h-8 w-8 text-primary" />,
+      image: reuniteLoversSpell,
       features: [
         "Personalized ritual with your names",
         "Photo-based energy alignment",
@@ -26,6 +33,7 @@ const Services = () => {
       delivery: "Within 5 days",
       price: "High Success Rate",
       icon: <Sparkles className="h-8 w-8 text-accent" />,
+      image: attractNewLoveSpell,
       features: [
         "Soul-mate manifestation ritual",
         "Chakra alignment for love",
@@ -41,6 +49,7 @@ const Services = () => {
       delivery: "Within 48 hours",
       price: "Quick Results",
       icon: <Shield className="h-8 w-8 text-secondary" />,
+      image: strengthenRelationshipSpell,
       features: [
         "Third party removal ritual",
         "Relationship protection barrier",
@@ -56,6 +65,7 @@ const Services = () => {
       delivery: "Within 2-4 days",
       price: "Emergency Service",
       icon: <Users className="h-8 w-8 text-primary" />,
+      image: stopBreakupSpell,
       features: [
         "Emergency intervention ritual",
         "Conflict resolution energy work",
@@ -71,6 +81,7 @@ const Services = () => {
       delivery: "Time varies",
       price: "Personalized",
       icon: <Crown className="h-8 w-8 text-accent" />,
+      image: customSpellWork,
       features: [
         "One-on-one consultation",
         "Completely customized ritual",
@@ -94,8 +105,14 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Header Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-card/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-b from-background to-card/20 relative overflow-hidden">
+        {/* Background candle image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url(${candleBackground})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-card/40" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
               Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Spiritual Services</span>
@@ -126,16 +143,27 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gradient-to-br from-card to-card/80 border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 rounded-full bg-gradient-to-br from-primary/20 to-accent/20">
-                      {service.icon}
-                    </div>
-                    <span className="text-xs bg-primary/20 text-primary px-3 py-1 rounded-full font-medium">
+              <Card key={index} className="bg-gradient-to-br from-card to-card/80 border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute top-4 right-4">
+                    <span className="text-xs bg-primary/90 text-white px-3 py-1 rounded-full font-medium backdrop-blur-sm">
                       {service.price}
                     </span>
                   </div>
+                  <div className="absolute bottom-4 left-4">
+                    <div className="p-2 rounded-full bg-white/20 backdrop-blur-sm">
+                      {service.icon}
+                    </div>
+                  </div>
+                </div>
+                <CardHeader>
                   <CardTitle className="text-2xl font-display">{service.title}</CardTitle>
                   <CardDescription className="text-muted-foreground text-base">
                     {service.description}

@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Heart, Shield, Clock, Star, CheckCircle, MessageCircle } from "lucide-react";
+import reuniteLoversSpell from "@/assets/reunite-lovers-spell.jpg";
+import attractNewLoveSpell from "@/assets/attract-new-love-spell.jpg";
+import strengthenRelationshipSpell from "@/assets/strengthen-relationship-spell.jpg";
 
 const Home = () => {
   const features = [
@@ -33,19 +36,22 @@ const Home = () => {
       title: "Reunite Lovers Spell",
       description: "Bring back an ex-lover or reconnect emotionally",
       delivery: "Within 3 days",
-      price: "Most Popular"
+      price: "Most Popular",
+      image: reuniteLoversSpell
     },
     {
       title: "Attract New Love Spell",
       description: "Manifest a soulmate or serious partner",
       delivery: "Within 5 days",
-      price: "High Success Rate"
+      price: "High Success Rate",
+      image: attractNewLoveSpell
     },
     {
       title: "Strengthen Relationship Spell",
       description: "Eliminate third parties, restore peace",
       delivery: "Within 48 hours",
-      price: "Quick Results"
+      price: "Quick Results",
+      image: strengthenRelationshipSpell
     }
   ];
 
@@ -123,14 +129,23 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gradient-to-br from-card to-card/80 border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-display">{service.title}</CardTitle>
-                    <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
+              <Card key={index} className="bg-gradient-to-br from-card to-card/80 border-border/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                {/* Service Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute top-4 right-4">
+                    <span className="text-xs bg-primary/90 text-white px-2 py-1 rounded-full font-medium backdrop-blur-sm">
                       {service.price}
                     </span>
                   </div>
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-xl font-display">{service.title}</CardTitle>
                   <CardDescription className="text-muted-foreground">
                     {service.description}
                   </CardDescription>

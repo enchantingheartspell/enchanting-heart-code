@@ -163,10 +163,11 @@ const Blog = () => {
                       </div>
                     </div>
                   </div>
-                  <a href="https://youtube.com/shorts/35MIcp0V9iQ?si=d75Wy9R6MLsyd_qr"<Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Eye className="mr-2 h-4 w-4" />
-                    Read Article
-                  </Button>
+                  <a href="https://youtube.com/shorts/35MIcp0V9iQ?si=d75Wy9R6MLsyd_qr" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      <Eye className="mr-2 h-4 w-4" />
+                      Read Article
+                    </Button>
                   </a>
                 </CardContent>
               </Card>

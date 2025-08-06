@@ -276,7 +276,7 @@ const Contact = () => {
             </Button>
             <Button variant="luxe" size="xl">
               <Heart className="mr-2 h-5 w-5" />
-              Book Consultation
+              <link to="/Booking">Book Consultation</link>
             </Button>
           </div>
           <p className="text-sm text-muted-foreground mt-6">

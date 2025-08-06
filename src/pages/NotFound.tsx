@@ -90,7 +90,7 @@ const NotFound = () => {
                 <Link to="/services">Our Services</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/about">About Lady Amina</Link>
+                <Link to="/about">About Dr Diamenos</Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/testimonials">Success Stories</Link>
@@ -129,7 +129,7 @@ const NotFound = () => {
             <blockquote className="text-lg italic text-muted-foreground border-l-4 border-primary pl-6">
               "Sometimes the path we're meant to take reveals itself when we're lost. 
               Every detour is an opportunity for new spiritual discoveries."
-              <footer className="text-sm mt-2 text-primary">— Lady Amina</footer>
+              <footer className="text-sm mt-2 text-primary">— Dr Diamenos</footer>
             </blockquote>
           </div>
         </div>

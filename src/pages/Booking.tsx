@@ -298,7 +298,7 @@ const Booking = () => {
                             <li>• Results typically manifest within 3-7 days of completion</li>
                             <li>• My personal information will remain 100% confidential</li>
                             <li>• I will receive 24/7 WhatsApp support throughout the process</li>
-                            <li>• Due to the spiritual nature of this work, results cannot be guaranteed</li>
+                            <li>• Due to the spiritual nature of this work, results is guaranteed</li>
                           </ul>
                         </div>
                       </div>
@@ -419,7 +419,7 @@ const Booking = () => {
             </DialogTitle>
           </DialogHeader>
           <div className="text-center space-y-4 py-4">
-            <p className="text-lg font-medium">Booking Received!</p>
+            <p className="text-lg font-medium">Booking Sent!</p>
             <p className="text-muted-foreground">
               You'll be contacted within 12 hours via WhatsApp.
             </p>

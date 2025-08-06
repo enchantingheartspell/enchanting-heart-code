@@ -60,7 +60,7 @@ const Home = () => {
       name: "Esther",
       location: "UK",
       rating: 5,
-      text: "She helped me bring back my fiancé in just 4 days. I'm in tears of joy! Thank you, Lady Amina.",
+      text: "He helped me bring back my fiancé in just 4 days. I'm in tears of joy! Thank you, Dr Diamenos.",
       days: "2 days ago"
     },
     {
@@ -74,7 +74,7 @@ const Home = () => {
       name: "Mike",
       location: "Canada",
       rating: 5,
-      text: "I used to doubt spells, but her rituals are done with love and ethics. She is truly gifted.",
+      text: "I used to doubt spells, but his rituals are done with love and ethics. He is truly gifted.",
       days: "3 weeks ago"
     }
   ];

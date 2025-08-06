@@ -57,7 +57,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Lady Amina</span>
+              About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Dr Diamenos</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               A 5th-generation African healer born with the divine gift of energetic alignment and emotional healing

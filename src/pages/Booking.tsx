@@ -341,7 +341,7 @@ const Booking = () => {
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
                     <div>
                       <p className="font-medium">Personal Contact</p>
-                      <p className="text-sm text-muted-foreground">Lady Amina will contact you within 12 hours via WhatsApp.</p>
+                      <p className="text-sm text-muted-foreground">Dr Diamenos will contact you within 12 hours via WhatsApp.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">

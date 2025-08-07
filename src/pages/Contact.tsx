@@ -1,13 +1,28 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail, Clock, Globe, Heart, Star, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate = useNavigate();
+
   const handleWhatsAppClick = () => {
     const phoneNumber = "2348139375655";
     const message = "Hello! I'm interested in your love spell services. Can you help me?";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+  };
+
+  const handleEmailClick = () => {
+    const email = "Enchantingheartspell@outlook.com";
+    const subject = "Love Spell Consultation Request";
+    const body = "Hello Lady Amina,\n\nI would like to schedule a consultation regarding your love spell services. Please let me know your availability.\n\nThank you!";
+    const emailUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = emailUrl;
+  };
+
+  const handleBookingClick = () => {
+    navigate('/booking');
   };
 
   return (
@@ -75,7 +90,11 @@ const Contact = () => {
                   <p className="text-muted-foreground">Response within 12 hours</p>
                   <p className="text-sm text-muted-foreground">Perfect for detailed consultations</p>
                 </div>
-                 <Button variant="outline" className="w-full">
+                 <Button 
+                  onClick={handleEmailClick}
+                  variant="outline" 
+                  className="w-full"
+                >
                   <Mail className="mr-2 h-4 w-4" />
                   Send Email
                 </Button>
@@ -102,7 +121,11 @@ const Contact = () => {
                   <p className="text-muted-foreground">Personalized spell recommendation</p>
                   <p className="text-sm text-muted-foreground">Complete the booking form to get started</p>
                 </div>
-                <Button variant="luxe" className="w-full">
+                <Button 
+                  onClick={handleBookingClick}
+                  variant="luxe" 
+                  className="w-full"
+                >
                   <Heart className="mr-2 h-4 w-4" />
                   Book Now
                 </Button>
@@ -274,7 +297,11 @@ const Contact = () => {
               <MessageCircle className="mr-2 h-5 w-5" />
               WhatsApp Now
             </Button>
-            <Button variant="luxe" size="xl">
+            <Button 
+              onClick={handleBookingClick}
+              variant="luxe" 
+              size="xl"
+            >
               <Heart className="mr-2 h-5 w-5" />
               Book Consultation
             </Button>

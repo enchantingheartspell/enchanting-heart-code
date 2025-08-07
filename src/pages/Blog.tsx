@@ -8,7 +8,6 @@ const Blog = () => {
     {
       title: "5 Signs You Need a Love Spell",
       excerpt: "Discover the clear indicators that suggest spiritual intervention could help restore your romantic relationship and bring back the love you've lost.",
-      author: "Lady Amina",
       date: "December 15, 2024",
       readTime: "5 min read",
       category: "Love Guidance",
@@ -17,8 +16,7 @@ const Blog = () => {
     },
     {
       title: "How the Full Moon Affects Spell Energy",
-      excerpt: "Learn why lunar phases are crucial for spell casting success and how to harness the moon's energy for maximum spiritual effectiveness in love magic.",
-      author: "Lady Amina", 
+      excerpt: "Learn why lunar phases are crucial for spell casting success and how to harness the moon's energy for maximum spiritual effectiveness in love magic.", 
       date: "December 10, 2024",
       readTime: "7 min read",
       category: "Spiritual Wisdom",
@@ -28,7 +26,6 @@ const Blog = () => {
     {
       title: "Why African Love Spells Are So Powerful",
       excerpt: "Explore the ancient traditions and spiritual practices that make African love spells uniquely effective for healing hearts and reuniting soulmates.",
-      author: "Lady Amina",
       date: "December 5, 2024", 
       readTime: "6 min read",
       category: "Cultural Heritage",
@@ -38,7 +35,6 @@ const Blog = () => {
     {
       title: "Truth About Black Magic: What I Will Never Do",
       excerpt: "Understanding the difference between ethical spiritual practices and harmful magic. Learn why positive energy always leads to better, lasting results.",
-      author: "Lady Amina",
       date: "November 28, 2024",
       readTime: "4 min read", 
       category: "Ethics & Safety",
@@ -48,7 +44,6 @@ const Blog = () => {
     {
       title: "Preparing Your Heart for Love: Energy Cleansing",
       excerpt: "Simple daily practices to cleanse negative energy and prepare your spiritual aura to attract and maintain healthy, loving relationships.",
-      author: "Lady Amina",
       date: "November 20, 2024",
       readTime: "8 min read",
       category: "Self-Preparation", 
@@ -58,7 +53,6 @@ const Blog = () => {
     {
       title: "Understanding Spiritual Compatibility in Relationships",
       excerpt: "How energy alignment affects romantic connections and what you can do to enhance spiritual harmony with your partner or desired love.",
-      author: "Lady Amina",
       date: "November 15, 2024",
       readTime: "6 min read",
       category: "Relationship Guidance",
@@ -90,7 +84,7 @@ const Blog = () => {
               Spiritual <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Wisdom</span> Blog
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Discover ancient wisdom, ethical spiritual practices, and guidance for love and relationships from Lady Amina's 12+ years of experience
+              Discover ancient wisdom, ethical spiritual practices, and guidance for love and relationships from Dr Diamenos 12+ years of experience
             </p>
           </div>
         </div>
@@ -238,7 +232,7 @@ const Blog = () => {
                 Stay <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Connected</span>
               </CardTitle>
               <CardDescription className="text-lg">
-                Subscribe to receive spiritual guidance, love wisdom, and exclusive insights directly from Lady Amina
+                Subscribe to receive spiritual guidance, love wisdom, and exclusive insights directly from Dr Diamenos
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">

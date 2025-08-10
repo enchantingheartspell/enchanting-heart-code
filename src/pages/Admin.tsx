@@ -641,26 +641,33 @@ export default function Admin() {
                           {getStatusBadge(request.status)}
                         </div>
                       </div>
-                      <div className="flex gap-2">
-                        {request.status === 'pending' && (
-                          <>
-                            <Button
-                              size="sm"
-                              onClick={() => handleApprove('spell_requests', request.id)}
-                              className="bg-green-600 hover:bg-green-700"
-                            >
-                              <Check size={16} />
-                            </Button>
-                            <Button
-                              size="sm"
-                              variant="destructive"
-                              onClick={() => handleReject('spell_requests', request.id)}
-                            >
-                              <X size={16} />
-                            </Button>
-                          </>
-                        )}
-                      </div>
+                       <div className="flex gap-2">
+                         {request.status === 'pending' && (
+                           <>
+                             <Button
+                               size="sm"
+                               onClick={() => handleApprove('spell_requests', request.id)}
+                               className="bg-green-600 hover:bg-green-700"
+                             >
+                               <Check size={16} />
+                             </Button>
+                             <Button
+                               size="sm"
+                               variant="destructive"
+                               onClick={() => handleReject('spell_requests', request.id)}
+                             >
+                               <X size={16} />
+                             </Button>
+                           </>
+                         )}
+                         <Button
+                           size="sm"
+                           variant="destructive"
+                           onClick={() => handleDelete('spell_requests', request.id)}
+                         >
+                           <Trash2 size={16} />
+                         </Button>
+                       </div>
                     </div>
                     <p className="text-muted-foreground mb-4">{request.details}</p>
                     {request.admin_notes && (
